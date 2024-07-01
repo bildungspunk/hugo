@@ -1,0 +1,22 @@
+/* assets/css/custom.css */
+.header-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.homepage-content {
+  text-align: left; /* oder center, je nach Bedarf */
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.homepage-content h1 {
+  font-size: 2em; /* Passe die Schriftgröße an */
+  color: #333; /* Passe die Schriftfarbe an */
+}
+
+.homepage-content p {
+  font-size: 1.2em; /* Passe die Schriftgröße an */
+  color: #666; /* Passe die Schriftfarbe an */
+}

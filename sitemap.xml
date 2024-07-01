@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2024-06-23T15:07:16+02:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/</loc>
+    <lastmod>2024-06-23T12:21:18+02:00</lastmod>
+  </url><url>
+    <loc>http://example.org/termine-fuer-live-nachhilfe/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://example.org/impressum/</loc>
+    <lastmod>2023-08-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://example.org/olaf/</loc>
+    <lastmod>2023-08-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://example.org/dslpa/</loc>
+    <lastmod>2023-08-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://example.org/dsm/</loc>
+    <lastmod>2023-08-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://example.org/gyloh/</loc>
+    <lastmod>2023-08-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://example.org/kontakt/</loc>
+    <lastmod>2023-08-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://example.org/categories/</loc>
+  </url><url>
+    <loc>http://example.org/tags/</loc>
+  </url>
+</urlset>
