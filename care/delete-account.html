@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Care Account-Loeschung</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #132018;
+        --muted: #4a5d52;
+        --line: #dbe5de;
+        --paper: #f7faf7;
+        --accent: #12573e;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px 64px;
+      }
+      h1, h2 {
+        line-height: 1.18;
+      }
+      h1 {
+        font-size: 2rem;
+        margin: 0 0 8px;
+      }
+      h2 {
+        margin-top: 32px;
+        font-size: 1.25rem;
+      }
+      p, li {
+        color: var(--muted);
+      }
+      a {
+        color: var(--accent);
+      }
+      .notice {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px 16px;
+        background: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="notice">Care befindet sich in V0-Testvorbereitung. Diese Seite beschreibt den externen Loeschweg.</p>
+      <h1>Care Account-Loeschung</h1>
+      <p>Stand: 17. Mai 2026</p>
+      <p>Hier koennen Nutzer die Loeschung ihres Care Accounts und der zugehoerigen Care-Appdaten anstossen.</p>
+
+      <h2>Account und zugehoerige Care-Appdaten loeschen</h2>
+      <p>Eine Account-Loeschung entfernt oder neutralisiert Care-Appdaten, die mit dem Account verbunden sind: Accountdaten, private Eingaben, Reveal-Freigaben, Spielrunden und Duo-Mitgliedschaft. Supabase Auth ist der externe Auth-Schritt und muss im finalen Betrieb ebenfalls geloescht werden.</p>
+
+      <h2>In der App</h2>
+      <ol>
+        <li>Care Account oeffnen.</li>
+        <li>Account Lifecycle oeffnen.</li>
+        <li>Account-Loeschung anfragen.</li>
+      </ol>
+      <p>Der Remote Account Lifecycle merkt die Loeschung sichtbar vor, neutralisiert oder entfernt Care-Appdaten und beendet aktive App-Sessions.</p>
+
+      <h2>Ausserhalb der App</h2>
+      <p>Falls die App nicht mehr installiert ist, kann die Loeschung per E-Mail angefragt werden:</p>
+      <p><a href="mailto:bildungspunk.dev@gmail.com?subject=Care%20Account-Loeschung">bildungspunk.dev@gmail.com</a></p>
+      <p>Die Anfrage muss die E-Mail-Adresse enthalten, mit der der Care Account angelegt wurde. Support kann weitere Schritte zur Account-Zuordnung anfordern.</p>
+
+      <h2>Duo Exit</h2>
+      <p>Wenn ein Account ein Duo verlaesst, wird der gemeinsame Raum geschlossen. Der verbleibende Partner behaelt hoechstens einen neutralen lokalen Restmarker ohne Partnernamen oder private Texte.</p>
+
+      <h2>Was geloescht oder neutralisiert wird</h2>
+      <ul>
+        <li>Care Account und App-Session.</li>
+        <li>Private Drafts und private Spielrunden.</li>
+        <li>Reveal-Freigaben und Game-Reveals.</li>
+        <li>Aktive Duo-Mitgliedschaft und geteilte Care-Appdaten, soweit sie dem Account zugeordnet sind.</li>
+      </ul>
+
+      <h2>Kontakt</h2>
+      <p>Support: <a href="mailto:bildungspunk.dev@gmail.com">bildungspunk.dev@gmail.com</a></p>
+      <p>Privacy Policy: <a href="privacy.html">Privacy Policy</a></p>
+    </main>
+  </body>
+</html>
