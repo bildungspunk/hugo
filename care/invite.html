@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unromantisch Einladung</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #132018;
+        --muted: #4a5d52;
+        --line: #dbe5de;
+        --paper: #f7faf7;
+        --accent: #12573e;
+        --accent-soft: #e8f3ed;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      main {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 40px 20px 64px;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 2rem;
+        line-height: 1.16;
+      }
+      p {
+        color: var(--muted);
+      }
+      a {
+        color: var(--accent);
+      }
+      .notice,
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+      .notice {
+        padding: 14px 16px;
+      }
+      .card {
+        margin-top: 22px;
+        padding: 20px;
+      }
+      .button {
+        display: inline-block;
+        margin-top: 10px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #ffffff;
+        font-weight: 700;
+        padding: 12px 18px;
+        text-decoration: none;
+      }
+      .soft {
+        background: var(--accent-soft);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="notice">Unromantisch befindet sich in der TestFlight-Beta.</p>
+      <h1>Einladung zu Unromantisch</h1>
+      <p>Stand: 17. Mai 2026</p>
+      <p id="invite-state">Diese Einladung ist bereit.</p>
+
+      <section class="card">
+        <h2>App installieren</h2>
+        <p>Installiere Unromantisch über TestFlight und öffne danach die Einladung noch einmal.</p>
+        <a class="button" href="https://testflight.apple.com/join/T3HcAFJx">Unromantisch in TestFlight öffnen</a>
+      </section>
+
+      <section class="card soft">
+        <h2>Wenn die App schon installiert ist</h2>
+        <p>Öffne den Einladungslink noch einmal direkt auf deinem iPhone. Dann sollte Unromantisch die Einladung annehmen.</p>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var token = params.get("invite");
+        var state = document.getElementById("invite-state");
+        if (!state) {
+          return;
+        }
+        if (!token || !/^[A-Za-z0-9_-]+$/.test(token)) {
+          state.textContent = "Der Einladungslink ist unvollständig. Bitte lass dir die Einladung noch einmal schicken.";
+          return;
+        }
+        state.textContent = "Diese Einladung ist bereit. Der Verbindungscode bleibt im Link und muss nicht abgetippt werden.";
+      })();
+    </script>
+  </body>
+</html>

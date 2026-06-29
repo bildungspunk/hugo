@@ -38,9 +38,18 @@
   <meta property="og:locale" content="de_de">
   <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="404 Page not found">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="404 Page not found">
+    <meta itemprop="name" content="404 Page not found">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="404 Page not found">
+    <script>
+      (function () {
+        var match = window.location.pathname.match(/^\/care\/invite\/([A-Za-z0-9_-]+)\/?$/);
+        if (!match) {
+          return;
+        }
+        window.location.replace("/care/invite.html?invite=" + encodeURIComponent(match[1]));
+      })();
+    </script>
 
     
   </head>

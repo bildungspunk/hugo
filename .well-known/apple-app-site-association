@@ -5,6 +5,7 @@
       {
         "appID": "QTJP7DT22D.com.careapp.mobile",
         "paths": [
+          "/care/invite.html",
           "/care/invite/*"
         ]
       }
