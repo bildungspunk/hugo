@@ -1,0 +1,69 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#153840">
+
+{{ $title := cond .IsHome "Mathe-Nachhilfe in Niebüll | BildungsPunk – Olaf Hinrichsen" (printf "%s | BildungsPunk" .Title) }}
+{{ $description := .Description | default .Site.Params.description }}
+{{ $canonical := .Permalink }}
+{{ $ogImage := printf "%s%s" .Site.BaseURL .Site.Params.ogImage }}
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<link rel="canonical" href="{{ $canonical }}">
+
+{{ if hugo.IsProduction }}
+  <meta name="robots" content="index, follow">
+{{ else }}
+  <meta name="robots" content="noindex, nofollow">
+{{ end }}
+
+<meta property="og:locale" content="de_DE">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:site_name" content="BildungsPunk">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ $canonical }}">
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BildungsPunk – Mathe-Nachhilfe in Niebüll">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
+
+{{ $style := resources.Get "css/site.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+
+{{ if .IsHome }}
+  {{ $schema := dict
+    "@context" "https://schema.org"
+    "@type" "Service"
+    "name" "BildungsPunk Mathe-Nachhilfe"
+    "description" .Site.Params.description
+    "url" .Site.BaseURL
+    "telephone" .Site.Params.phone
+    "serviceType" "Mathe-Nachhilfe"
+    "areaServed" (dict "@type" "City" "name" "Niebüll")
+    "provider" (dict
+      "@type" "Person"
+      "name" .Site.Params.author
+      "address" (dict
+        "@type" "PostalAddress"
+        "streetAddress" .Site.Params.street
+        "postalCode" .Site.Params.postalCode
+        "addressLocality" .Site.Params.city
+        "addressCountry" "DE"
+      )
+    )
+    "offers" (slice
+      (dict "@type" "Offer" "name" "Einzelnachhilfe, 60 Minuten" "price" "40" "priceCurrency" "EUR")
+      (dict "@type" "Offer" "name" "Nachhilfe zu zweit, 60 Minuten" "price" "50" "priceCurrency" "EUR")
+      (dict "@type" "Offer" "name" "Nachhilfe zu dritt, 60 Minuten" "price" "60" "priceCurrency" "EUR")
+    )
+  }}
+  <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+{{ end }}
+

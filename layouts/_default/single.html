@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <article class="legal section">
+    <div class="shell legal-shell">
+      <p class="eyebrow">BildungsPunk</p>
+      <h1>{{ .Title }}</h1>
+      <div class="prose">
+        {{ .Content }}
+        {{ if eq .Layout "termin" }}
+          <a class="button button-primary external-service" href="{{ .Site.Params.calendly }}" rel="external">
+            Calendly öffnen
+            <span aria-hidden="true">→</span>
+          </a>
+          <p class="service-note">Du wechselst dafür zu Calendly. Hinweise zur Datenverarbeitung findest du in meiner <a href="{{ "/datenschutz/" | relURL }}">Datenschutzerklärung</a>.</p>
+        {{ end }}
+      </div>
+    </div>
+  </article>
+{{ end }}
+

@@ -1,0 +1,25 @@
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <a class="brand brand-footer" href="{{ "/" | relURL }}">
+        <span>Bildungs</span><strong>Punk</strong><i>.</i>
+      </a>
+      <p>Persönliche Mathe-Nachhilfe in Niebüll.<br>Seit 1997.</p>
+    </div>
+    <div>
+      <strong>Kontakt</strong>
+      <a href="tel:{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
+      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+    </div>
+    <div>
+      <strong>Rechtliches</strong>
+      <a href="{{ "/impressum/" | relURL }}">Impressum</a>
+      <a href="{{ "/datenschutz/" | relURL }}">Datenschutz</a>
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <span>© {{ now.Year }} Olaf Hinrichsen</span>
+    <span>Ohne Tracking. Ohne Cookie-Banner.</span>
+  </div>
+</footer>
+

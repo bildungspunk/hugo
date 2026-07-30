@@ -1,0 +1,30 @@
+baseURL = "https://bildungspunk.de/"
+languageCode = "de-DE"
+defaultContentLanguage = "de"
+title = "BildungsPunk"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[params]
+  description = "Persönliche Mathe-Nachhilfe in Niebüll – für alle Klassenstufen, mit Schwerpunkt ab Klasse 9 bis zum Abitur. Seit 1997."
+  author = "Olaf Hinrichsen"
+  city = "Niebüll"
+  street = "Theodor-Storm-Str. 34"
+  postalCode = "25899"
+  phone = "+49 4661 7830128"
+  phoneHref = "+4946617830128"
+  whatsapp = "491735874105"
+  whatsappDisplay = "+49 173 5874105"
+  email = "grinst.proteus06@icloud.com"
+  calendly = "https://calendly.com/ohinrichsen88/nachhilfetermin"
+  ogImage = "og.png"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+
