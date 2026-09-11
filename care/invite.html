@@ -76,13 +76,33 @@
     <main>
       <p class="notice">Ich möchte Unromantisch mit dir nutzen.</p>
       <h1>Unromantisch Einladung</h1>
-      <p id="invite-state">Diese Einladung ist bereit.</p>
+      <!--
+        Bewusst neutral. Vorher stand hier „Diese Einladung ist bereit." als
+        Ausgangstext — also bevor irgendetwas geprüft war. Wer die Seite ohne
+        JavaScript öffnet oder eine Vorschau davon sieht, bekam damit eine
+        Zusage, die niemand geprüft hatte. Am 2026-08-06 aufgefallen.
+      -->
+      <p id="invite-state">Einladung wird geprüft …</p>
 
-      <section class="card">
+      <section class="card" id="apple-install-section">
         <h2>1. Installiere die App über TestFlight</h2>
         <p>Installiere zuerst Unromantisch auf diesem iPhone.</p>
         <a class="button" href="https://testflight.apple.com/join/T3HcAFJx"
           >TestFlight öffnen</a
+        >
+      </section>
+
+      <section class="card" id="android-install-section" style="display: none">
+        <h2>1. Installiere die App für Android</h2>
+        <p>Installiere zuerst Unromantisch auf diesem Android-Gerät.</p>
+        <p>
+          Android fragt dabei, ob es eine App außerhalb des Play Stores
+          installieren darf – erlaube das für diese Installation.
+        </p>
+        <a
+          class="button"
+          href="https://expo.dev/accounts/olafhinrichsen/projects/care-mobile/builds/76b8060e-2c9b-4e1c-b4b5-865f8d5fb273"
+          >App für Android laden</a
         >
       </section>
 
@@ -99,6 +119,20 @@
     </main>
 
     <script>
+      (function () {
+        // Android hat kein TestFlight. Android-Geräte bekommen denselben
+        // Installationsweg wie im Einladungstext (Expo-APK, Ticket 61); der
+        // Apple-Weg bleibt für alle anderen Geräte der Standard.
+        var isAndroid = /Android/i.test(navigator.userAgent || "");
+        var appleSection = document.getElementById("apple-install-section");
+        var androidSection = document.getElementById(
+          "android-install-section",
+        );
+        if (isAndroid && appleSection && androidSection) {
+          appleSection.style.display = "none";
+          androidSection.style.display = "";
+        }
+      })();
       (function () {
         function inviteCodeForToken(token) {
           try {
@@ -133,8 +167,12 @@
         openInvite.href =
           "unromantisch://invite/" + encodeURIComponent(inviteCode);
         openInvite.removeAttribute("aria-disabled");
+        // Diese Seite kennt nur die Form des Codes, nicht seinen Zustand. Ob
+        // die Einladung noch offen ist, weiß allein der Server — und gefragt
+        // wird er erst in der App. „Diese Einladung ist bereit" behauptete
+        // mehr, als die Seite wissen kann.
         state.textContent =
-          "Diese Einladung ist bereit. Der Verbindungscode bleibt im Link und muss nicht abgetippt werden.";
+          "Der Link ist vollständig. Ob die Einladung noch offen ist, siehst du beim Öffnen in der App.";
       })();
     </script>
   </body>
