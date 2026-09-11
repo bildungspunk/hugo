@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.careapp.mobile",
       "sha256_cert_fingerprints": [
-        "82:3B:51:81:F2:69:94:90:9E:8C:69:67:3D:96:11:8C:EE:E7:0E:3B:94:0C:13:4B:C1:2A:F3:60:36:4A:18:CE"
+        "82:3B:51:81:F2:69:94:90:9E:8C:69:67:3D:96:11:8C:EE:E7:0E:3B:94:0C:13:4B:C1:2A:F3:60:36:4A:18:CE",
+        "D2:7E:CB:37:65:7C:C4:A2:5A:72:4B:1A:DD:52:65:88:16:A0:EF:88:19:AA:1C:51:11:C1:64:A5:24:C4:66:AA"
       ]
     }
   }
