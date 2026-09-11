@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.careapp.mobile",
+      "sha256_cert_fingerprints": [
+        "82:3B:51:81:F2:69:94:90:9E:8C:69:67:3D:96:11:8C:EE:E7:0E:3B:94:0C:13:4B:C1:2A:F3:60:36:4A:18:CE"
+      ]
+    }
+  }
+]
