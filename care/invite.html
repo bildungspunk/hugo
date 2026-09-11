@@ -96,13 +96,13 @@
         <h2>1. Installiere die App für Android</h2>
         <p>Installiere zuerst Unromantisch auf diesem Android-Gerät.</p>
         <p>
-          Android fragt dabei, ob es eine App außerhalb des Play Stores
-          installieren darf – erlaube das für diese Installation.
+          Tippe bei Google Play mit dem Google-Konto, für das du eingeladen
+          wurdest, auf „Tester werden“ und installiere danach die App.
         </p>
         <a
           class="button"
-          href="https://expo.dev/accounts/olafhinrichsen/projects/care-mobile/builds/76b8060e-2c9b-4e1c-b4b5-865f8d5fb273"
-          >App für Android laden</a
+          href="https://play.google.com/apps/internaltest/4701565139014330382"
+          >Google Play öffnen</a
         >
       </section>
 
@@ -121,7 +121,8 @@
     <script>
       (function () {
         // Android hat kein TestFlight. Android-Geräte bekommen denselben
-        // Installationsweg wie im Einladungstext (Expo-APK, Ticket 61); der
+        // Installationsweg wie im Einladungstext (Google Play, interner Test,
+        // Ticket 61e); der
         // Apple-Weg bleibt für alle anderen Geräte der Standard.
         var isAndroid = /Android/i.test(navigator.userAgent || "");
         var appleSection = document.getElementById("apple-install-section");
